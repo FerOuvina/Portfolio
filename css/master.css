@@ -13,19 +13,39 @@
   font-family: 'Roboto Mono', monospace;
   scroll-behavior: smooth;
 }
+/* body {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+} */
 
 /* Navbar */
 .nav__main {
-  display: none;
+  opacity: 0;
+  /* right: 0; */
+  /* margin: 0.2rem; */
+  padding: 0.3rem;
+  background: var(--red);
+  border-radius: 5px;
+  position: fixed;
+  transition: all 1s ease-in-out;
+}
+.nav__ul {
+  display: flex;
+}
+.nav__ul--li {
+  list-style: none;  
+}
+.nav__ul--li a {
+  text-decoration: none;
+  margin: 1rem 1rem;
+  color: var(--black);
 }
 
 /* Presentation section */
 .main {
   background: var(--pure-black);
   color: var(--red);
-
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;

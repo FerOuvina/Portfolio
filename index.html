@@ -16,21 +16,22 @@
   <link rel="stylesheet" href="./css/master.css">
 </head>
 
-<body>
+<body id="body">
 
   <!-- Navbar -->
-  <header class="nav__main">
+  <header class="nav__main" data-navbar>
     <nav class="nav__container">
       <ul class="nav__ul">
-        <li class="nav__ul--li">Home</li>
-        <li class="nav__ul--li">Proyects</li>
-        <li class="nav__ul--li">Contact</li>
+        <li class="nav__ul--li"><a href="#main">Home</a></li>
+        <li class="nav__ul--li"><a href="#proyects">Proyects</a></li>
+        <li class="nav__ul--li"><a href="#aboutMe">About Me</a></li>
+        <li class="nav__ul--li"><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- Main Content -->
-  <main class="main">
+  <main class="main" id="main">
     <div class="main__container">
       <h1 class="main__container--title">Hi I'm Fernando.</h1>
       <h2 class="main__container--subtitle">a web developer</h2>
@@ -43,7 +44,7 @@
       <h2 class="proyects__title">This are my latest proyects</h2>
 
       <!-- Proyect 1 -->
-      <div class="proyects__container--1" data-proyect1>
+      <div class="proyects__container--1" data-proyect1 id="proyects">
         <div class="proyects__container--card">
           <p class="proyects__container--card--p">This is a simple, one page TO DO task manager. I made it with vanilla
             JS, HTML, CSS and a bit of JSON for managing the local storage. The main purpose of this project was to
@@ -120,7 +121,7 @@
       <div class="skills__container">
 
         <!-- About me section -->
-        <h2 class="skills__container--title">Let's get to know each other</h2>
+        <h2 class="skills__container--title" id="aboutMe">Let's get to know each other</h2>
         <p class="skills__container--p">Hello again, my name is Fernando Ouviña, I'm from Buenos Aires, Argentina. I'm a
           guy who likes everything related to computers and technology, right now I'm studying Front-End Development.
           I'm looking for internship opportunities in the Front-End Dev area, where I can develop my
@@ -239,11 +240,11 @@
     </article>
 
     <!-- Footer Section -->
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="footer__container">
         <h2 class="footer__container--title">Let's work together!</h2>
          <div class="footer__container--formContainer">
-           <img src="./resources/waiting.gif" alt="">
+           <img src="./resources/waiting.gif" alt="" data-contact>
           <form action="" class="footer__container--form">
   
             <label for="name" class="footer__container--label">Name</label>
@@ -263,6 +264,8 @@
 
   <!-- App JS -->
   <script src="./js/app.js"></script>
+  <!-- Gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
