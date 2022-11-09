@@ -112,76 +112,76 @@ const observerProyect3 = new IntersectionObserver(showProyect3, {
 });
 observerProyect3.observe(proyect3);
 
-// // Auto scroll from proyect to contact
-// const autoScrollProyectsTitle = () => {
-//   setTimeout(() => {
-//     proyectsTitle.scrollIntoView({
-//       behavior: "smooth",
-//       block: "center"
-//     });
-//   }, 7800);
-// };
-// autoScrollProyectsTitle();
+// Auto scroll from proyect to contact
+const autoScrollProyectsTitle = () => {
+  setTimeout(() => {
+    proyectsTitle.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 7800);
+};
+autoScrollProyectsTitle();
 
-// const autoScrollProyect1 = () => {
-//   setTimeout(() => {
-//     proyect1.scrollIntoView({
-//       behavior: "smooth",
-//       block: "center"
-//     });
-//   }, 9500);
-// };
-// autoScrollProyect1();
+const autoScrollProyect1 = () => {
+  setTimeout(() => {
+    proyect1.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 9500);
+};
+autoScrollProyect1();
 
-// const autoScrollProyect2 = () => {
-//   setTimeout(() => {
-//     proyect2.scrollIntoView({
-//       behavior: "smooth",
-//       block: "center"
-//     });
-//   }, 19000);
-// };
-// autoScrollProyect2();
+const autoScrollProyect2 = () => {
+  setTimeout(() => {
+    proyect2.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 19000);
+};
+autoScrollProyect2();
 
-// const autoScrollProyect3 = () => {
-//   setTimeout(() => {
-//     proyect3.scrollIntoView({
-//       behavior: "smooth",
-//       block: "center"
-//     });
-//   }, 29000);
-// };
-// autoScrollProyect3();
+const autoScrollProyect3 = () => {
+  setTimeout(() => {
+    proyect3.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 29000);
+};
+autoScrollProyect3();
 
-// const autoScrollAboutMe = () => {
-//   setTimeout(() => {
-//     aboutMe.scrollIntoView({
-//       behavior: "smooth",
-//       block: "start"
-//     });
-//   }, 39000);
-// };
-// autoScrollAboutMe();
+const autoScrollAboutMe = () => {
+  setTimeout(() => {
+    aboutMe.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }, 39000);
+};
+autoScrollAboutMe();
 
-// const autoScrollSkillsTitle = () => {
-//   setTimeout(() => {
-//     htmlIcon.scrollIntoView({
-//       behavior: "smooth",
-//       block: "center"
-//     });
-//   }, 48000);
-// };
-// autoScrollSkillsTitle();
+const autoScrollSkillsTitle = () => {
+  setTimeout(() => {
+    htmlIcon.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 48000);
+};
+autoScrollSkillsTitle();
 
-// const autoScrollSkeleton = () => {
-//   setTimeout(() => {
-//     submitBtn.scrollIntoView({
-//       behavior: "smooth",
-//       block: "center"
-//     });
-//   }, 56000);
-// };
-// autoScrollSkeleton();
+const autoScrollSkeleton = () => {
+  setTimeout(() => {
+    submitBtn.scrollIntoView({
+      behavior: "smooth",
+      block: "center"
+    });
+  }, 56000);
+};
+autoScrollSkeleton();
 
 // Showing the navbar
 const contact = document.querySelector('[data-contact]');
