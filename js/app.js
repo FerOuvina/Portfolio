@@ -112,56 +112,76 @@ const observerProyect3 = new IntersectionObserver(showProyect3, {
 });
 observerProyect3.observe(proyect3);
 
-// Auto scroll from proyect to contact
-const autoScrollProyect1 = () => {
-  setTimeout(() => {
-    proyect1.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 9000);
-};
-autoScrollProyect1();
+// // Auto scroll from proyect to contact
+// const autoScrollProyectsTitle = () => {
+//   setTimeout(() => {
+//     proyectsTitle.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center"
+//     });
+//   }, 7800);
+// };
+// autoScrollProyectsTitle();
 
-const autoScrollProyect2 = () => {
-  setTimeout(() => {
-    proyect2.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 19000);
-};
-autoScrollProyect2();
+// const autoScrollProyect1 = () => {
+//   setTimeout(() => {
+//     proyect1.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center"
+//     });
+//   }, 9500);
+// };
+// autoScrollProyect1();
 
-const autoScrollProyect3 = () => {
-  setTimeout(() => {
-    proyect3.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 29000);
-};
-autoScrollProyect3();
+// const autoScrollProyect2 = () => {
+//   setTimeout(() => {
+//     proyect2.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center"
+//     });
+//   }, 19000);
+// };
+// autoScrollProyect2();
 
-const autoScrollAboutMe = () => {
-  setTimeout(() => {
-    aboutMe.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 39000);
-};
-autoScrollAboutMe();
+// const autoScrollProyect3 = () => {
+//   setTimeout(() => {
+//     proyect3.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center"
+//     });
+//   }, 29000);
+// };
+// autoScrollProyect3();
 
-const autoScrollSkeleton = () => {
-  setTimeout(() => {
-    skeleton.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 48000);
-};
-autoScrollSkeleton();
+// const autoScrollAboutMe = () => {
+//   setTimeout(() => {
+//     aboutMe.scrollIntoView({
+//       behavior: "smooth",
+//       block: "start"
+//     });
+//   }, 39000);
+// };
+// autoScrollAboutMe();
+
+// const autoScrollSkillsTitle = () => {
+//   setTimeout(() => {
+//     htmlIcon.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center"
+//     });
+//   }, 48000);
+// };
+// autoScrollSkillsTitle();
+
+// const autoScrollSkeleton = () => {
+//   setTimeout(() => {
+//     submitBtn.scrollIntoView({
+//       behavior: "smooth",
+//       block: "center"
+//     });
+//   }, 56000);
+// };
+// autoScrollSkeleton();
 
 // Showing the navbar
 const contact = document.querySelector('[data-contact]');
@@ -181,40 +201,6 @@ const observerNavbar = new IntersectionObserver(showNavbar, {
 });
 observerNavbar.observe(contact);
 
-// Moving the navbar depending on wich proyects is on screen
-const moveNavbarRight = (event) => {
-  let clientWidth = document.getElementById('body').clientWidth;
-  let elementWidth = navbar.clientWidth;
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      gsap.to(navbar, {x: clientWidth - elementWidth, delay: 1});
-    };
-  });
-};
-
-const observerNavbarRight = new IntersectionObserver(moveNavbarRight, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.8
-});
-observerNavbarRight.observe(proyect2);
-
-const moveNavbarLeft = (event) => {
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      gsap.to(navbar, {x: '0vw', delay: 1});
-    };
-  });
-};
-
-const observerNavbarLeft = new IntersectionObserver(moveNavbarLeft, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.8
-});
-observerNavbarLeft.observe(proyect1);
-observerNavbarLeft.observe(proyect3);
-
 // Abot Me Animation
 const aboutMe = document.querySelector('[data-aboutMe]');
 const showAboutMe = (event) => {
@@ -228,7 +214,7 @@ const showAboutMe = (event) => {
 const observerAboutMe = new IntersectionObserver(showAboutMe, {
   root: null,
   rootMargin: '0px',
-  threshold: 1.0
+  threshold: 0.5
 });
 observerAboutMe.observe(aboutMe);
 
@@ -242,7 +228,7 @@ const gitIcon = document.querySelector('[data-git]');
 const showIcons = (event) => {
   event.forEach((event) => {
     if (event.isIntersecting) {
-      gsap.fromTo(skillsTitle, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'circ', delay: 2, duration: 1});
+      gsap.fromTo(skillsTitle, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'circ', delay: 1, duration: 1});
       gsap.fromTo(htmlIcon, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
       gsap.fromTo(cssIcon, {opacity: 0, x: -4000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
       gsap.fromTo(jsIcon, {opacity: 0, x: -6000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
@@ -255,9 +241,9 @@ const showIcons = (event) => {
 const observerIcons = new IntersectionObserver(showIcons, {
   root: null,
   rootMargin: '0px',
-  threshold: 1.0
+  threshold: 1
 });
-observerIcons.observe(aboutMe);
+observerIcons.observe(skillsTitle);
 
 // Contact animations
 const contactTitle = document.querySelector('[data-contact-title]');
@@ -282,6 +268,13 @@ const showContactInfo = (event) => {
       gsap.fromTo(inputEmail, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1.3});
       gsap.fromTo(inputMsg, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1.6});
       gsap.fromTo(submitBtn, {opacity: 0}, {opacity: 1, duration: 2});
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        gsap.fromTo(socialBar, {display: 'none', opacity: 0, x: -8000}, {display: 'flex', opacity: 1, x: 0, ease: 'circ', duration: 1});
+        gsap.fromTo(gitHubIcon, {opacity: 0, x: -8000}, {opacity: 1, x: 0, ease: 'circ', duration: 1.2});
+        gsap.fromTo(linkedInIcon, {opacity: 0, x: -8000}, {opacity: 1, x: 0, ease: 'circ', duration: 1.4});
+        gsap.fromTo(emailIcon, {opacity: 0, x: -8000}, {opacity: 1, x: 0, ease: 'circ', duration: 1.6});
+        gsap.fromTo(instagramIcon, {opacity: 0, x: -8000}, {opacity: 1, x: 0, ease: 'circ', duration: 1.8});
+      };
       observerContact.disconnect();
     };
   });
@@ -291,4 +284,5 @@ const observerContact = new IntersectionObserver(showContactInfo, {
   rootMargin: '0px',
   threshold: 1.0
 });
-observerContact.observe(skeleton);
+observerContact.observe(submitBtn);
+

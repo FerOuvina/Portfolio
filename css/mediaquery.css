@@ -1,0 +1,126 @@
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    /* Presentation section */  
+    .main {
+      font-size: 1rem;
+    }
+    /* Navbar */
+    .nav__main {
+      display: none;
+    }
+
+    /* Social Section */
+    .social__article {
+      display: none;
+      top: 0%;
+      left: 30%;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+    .social__container {
+      flex-direction: row;
+      padding: 0 0.1rem;
+    }
+    .social__container--li {
+      padding: 0 0.1rem;
+    }
+
+    /* Main proyects section */
+    .proyects__title {
+      font-size: 1.5rem;
+      margin-top: 10rem;
+    }
+    .proyects__container--title {
+      font-size: 1.2rem;
+      margin: 0 0 0.5rem 0;
+    }
+    .proyects__container--1, .proyects__container--2, .proyects__container--3 {
+      margin: 0 0.3rem;
+      flex-direction: column;
+    }
+    .proyects__container--card--p {
+      margin-right: 0;
+      font-size: 3.5vmin;
+    }
+    .proyects__container--card--div {
+      margin: 0.5rem 0 0 0;
+    }
+    .proyects__container--card--link a {
+      font-size: 3.5vmin;
+    }
+    .proyects__container--videos--video {
+      width: 200px;
+    }
+    #proyect1-video {
+      height: auto;
+      margin-top: 0.5rem;
+    }
+    .proyects__container--2 {
+      flex-direction: column-reverse;
+    }
+    .left__title {
+      margin: 0 0 0.5rem 0;
+    }
+    .left__p{
+      margin: 0;
+    }
+    .proyects__container--videos--video {
+      margin-top: 0.5rem;
+      width: 200px;
+      height: 160px;
+    }
+
+    /* Skills section */
+    .skills__container {
+      margin: 0;
+    }
+    .skills__container--title {
+      font-size: 1.5rem;
+    }
+    .skills__container--p {
+      margin: 1rem 0;
+      word-break: keep-all;
+    }
+    .skills__container--subtitle {
+      font-size: 1.5rem;
+      margin-top: 4rem;
+    }
+    .skills__subContainer {
+      flex-wrap: wrap;
+    }
+    .skills__subContainer--html, .skills__subContainer--css, .skills__subContainer--js, .skills__subContainer--react, .skills__subContainer--git {
+      margin: 0 0.5rem;
+    }
+
+    /* Footer section */
+    .footer__container {
+      margin: 0 0 5rem 0;
+    }
+    .footer__container--title {
+      font-size: 1.5rem;
+      margin: 0 0 1rem 0;
+    }
+    .footer__container--formContainer {
+      margin: 0;
+    }
+    .footer__container--gif {
+      display: none;
+    }
+    .footer__container--form {
+      width: 100%;
+      max-width: 80%;
+      height: 100%;
+    }
+    .footer__container--label {
+      margin: 0.5rem 0;
+    }
+    .footer__container--inputMsg {
+      max-width: 100%;
+    }
+    .footer__container--submit {
+      margin: 0.5rem 0 0 0;
+    }
+}
