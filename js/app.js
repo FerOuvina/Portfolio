@@ -113,15 +113,17 @@ const observerProyect3 = new IntersectionObserver(showProyect3, {
 observerProyect3.observe(proyect3);
 
 // Auto scroll from proyect to contact
-const autoScrollProyectsTitle = () => {
-  setTimeout(() => {
-    proyectsTitle.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 7800);
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  const autoScrollProyectsTitle = () => {
+    setTimeout(() => {
+      proyectsTitle.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 7800);
+  };
+  autoScrollProyectsTitle();
 };
-autoScrollProyectsTitle();
 
 const autoScrollProyect1 = () => {
   setTimeout(() => {
@@ -129,7 +131,7 @@ const autoScrollProyect1 = () => {
       behavior: "smooth",
       block: "center"
     });
-  }, 9500);
+  }, 11000);
 };
 autoScrollProyect1();
 
@@ -157,21 +159,23 @@ const autoScrollAboutMe = () => {
   setTimeout(() => {
     aboutMe.scrollIntoView({
       behavior: "smooth",
-      block: "start"
+      block: "center"
     });
   }, 39000);
 };
 autoScrollAboutMe();
 
-const autoScrollSkillsTitle = () => {
-  setTimeout(() => {
-    htmlIcon.scrollIntoView({
-      behavior: "smooth",
-      block: "center"
-    });
-  }, 48000);
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+  const autoScrollSkillsTitle = () => {
+    setTimeout(() => {
+      htmlIcon.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 48000);
+  };
+  autoScrollSkillsTitle();
 };
-autoScrollSkillsTitle();
 
 const autoScrollSkeleton = () => {
   setTimeout(() => {
