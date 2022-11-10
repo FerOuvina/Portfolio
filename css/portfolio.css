@@ -14,7 +14,13 @@
   font-family: 'Roboto Mono', monospace;
   scroll-behavior: smooth;
 }
-body {
+.body {
+  height: 100%;
+  overflow-x: hidden;
+  background: var(--pure-black);
+}
+.body-mobile {
+  height: 100%;
   overflow-x: hidden;
   background: var(--pure-black);
 }
@@ -163,7 +169,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10rem;
+  margin: 2rem 10rem;
 }
 .proyects__container--card {
   display: flex;
@@ -219,7 +225,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10rem;
+  margin: 2rem 10rem;
 }
 .left__title {
   margin: 0 0 2rem 8rem;
@@ -233,7 +239,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 10rem;
+  margin: 2rem 10rem;
 }
 
 /* Skills section */
@@ -315,7 +321,7 @@ body {
 .footer__container--formContainer {
   display: flex;
   justify-content: space-evenly;
-  margin: 2rem 8rem;
+  margin: 2rem 0;
 }
 .footer__container--gif {
   border-radius: 10px;
@@ -372,4 +378,28 @@ body {
 .footer__container--submit:focus {
   background: var(--pink);
   padding: 0.2rem 0;
+}
+
+/* Social Media */
+.socialMedia__container {
+  margin-bottom: 4rem;
+  display: none;
+  justify-content: center;
+  background: var(--red);
+  font-size: 2rem;
+  color: var(--pure-black);
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.socialMedia__container--li {
+  list-style: none;
+  margin: 0.2rem 0.5rem;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+}
+.socialMedia__container--link {
+  color: var(--pure-black);
+}
+.socialMedia__container--link:visited {
+  color: var(--pure-black);
 }

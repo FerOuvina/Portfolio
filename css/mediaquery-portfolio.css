@@ -15,18 +15,6 @@
     /* Social Section */
     .social__article {
       display: none;
-      top: 0%;
-      left: 30%;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-    }
-    .social__container {
-      flex-direction: row;
-      padding: 0 0.1rem;
-    }
-    .social__container--li {
-      padding: 0 0.1rem;
     }
 
     /* Main proyects section */
@@ -98,7 +86,7 @@
 
     /* Footer section */
     .footer__container {
-      margin: 0 0 5rem 0;
+      margin: 0 0 1rem 0;
     }
     .footer__container--title {
       font-size: 1.5rem;
@@ -124,6 +112,11 @@
     .footer__container--submit {
       margin: 0.5rem 0 0 0;
     }
+
+    /* Social Media */
+    .socialMedia__container {
+      display: flex;
+    }
 }
 
 @media only screen 
@@ -142,18 +135,6 @@
     /* Social Section */
     .social__article {
       display: none;
-      top: 0%;
-      left: 30%;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-    }
-    .social__container {
-      flex-direction: row;
-      padding: 0 0.1rem;
-    }
-    .social__container--li {
-      padding: 0 0.1rem;
     }
 
     /* Main proyects section */
@@ -250,13 +231,18 @@
     .footer__container--submit {
       margin: 0.5rem 0 0 0;
     }
+
+    /* Social Media */
+    .socialMedia__container {
+      display: flex;
+    }
 }
 
 @media only screen 
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (-webkit-min-device-pixel-ratio: 1) {
-/* Presentation section */  
+    /* Presentation section */  
     .main {
       font-size: 1.5rem;
     }
@@ -264,23 +250,6 @@
     /* Navbar */
     .nav__main {
       display: none;
-    }
-
-    /* Social Section */
-    .social__article {
-      display: none;
-      top: 0%;
-      left: 30%;
-      border-top-right-radius: 0px;
-      border-bottom-right-radius: 10px;
-      border-bottom-left-radius: 10px;
-    }
-    .social__container {
-      flex-direction: row;
-      padding: 0 0.1rem;
-    }
-    .social__container--li {
-      padding: 0 0.1rem;
     }
 
     /* Main proyects section */
