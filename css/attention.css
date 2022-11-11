@@ -45,3 +45,48 @@ span {
   color: var(--pure-black);
   margin: 0.6rem 0;
 }
+
+/* Loading animation */
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading__container {
+  display: flex;
+  background: var(--red);
+  color: var(--wheat);
+  border-radius: 10px;
+  padding: 8rem 15rem;
+}
+.loading__container--input {
+  font-size: 2rem;
+  background: var(--wheat);
+  border: 2px solid var(--wheat);
+  border-radius: 10px;
+}
+.loading__container--input::placeholder {
+  text-align: center;
+}
+.loading__container--animation {
+  position: relative;
+}
+.loading__container--animation::before, .loading__container--animation::after {
+  border-radius: 10px;
+  content: '';
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  left: 0%;
+}
+.loading__container--animation::before {
+  background: var(--pure-black);
+  animation: loading 5s 2s forwards;
+}
+@keyframes loading {
+  to {
+    left: 100%;
+  }
+}
