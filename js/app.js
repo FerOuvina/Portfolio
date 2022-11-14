@@ -8,8 +8,8 @@ window.addEventListener('load', moveIntoView());
 // Unblocking the scrolling for mobile users since it doesn't work properly
 const bodyScroll = document.getElementById('body');
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
-  bodyScroll.classList.add('body-mobile');
-  bodyScroll.classList.remove('body');
+  bodyScroll.classList.add('body__scroll--active');
+  bodyScroll.classList.remove('body__scroll--inactive');
 };
 
 // Proyects Title and Social Bar Animation
@@ -119,6 +119,136 @@ const observerProyect3 = new IntersectionObserver(showProyect3, {
 });
 observerProyect3.observe(proyect3);
 
+// Abot Me Animation
+const aboutMe = document.querySelector('[data-aboutMe]');
+const showAboutMe = (event) => {
+  event.forEach((event) => {
+    if (event.isIntersecting) {
+      gsap.fromTo(aboutMe, {opacity: 0, x: 900000}, {opacity: 1, x: 0, ease: 'circ'});
+      observerAboutMe.disconnect()
+    };
+  });
+};
+const observerAboutMe = new IntersectionObserver(showAboutMe, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+});
+observerAboutMe.observe(aboutMe);
+
+// Skills Animation
+const skillsTitle = document.querySelector('[data-skillsTitle]');
+const htmlIcon = document.querySelector('[data-html]');
+const cssIcon = document.querySelector('[data-css]');
+const jsIcon = document.querySelector('[data-js]');
+const reactIcon = document.querySelector('[data-react]');
+const gitIcon = document.querySelector('[data-git]');
+const showIcons = (event) => {
+  event.forEach((event) => {
+    if (event.isIntersecting) {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        gsap.fromTo(skillsTitle, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'circ', duration: 1});
+      } else {
+        gsap.fromTo(skillsTitle, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'circ', duration: 1, delay: 2});
+      };
+      gsap.fromTo(htmlIcon, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
+      gsap.fromTo(cssIcon, {opacity: 0, x: -4000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
+      gsap.fromTo(jsIcon, {opacity: 0, x: -6000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
+      gsap.fromTo(reactIcon, {opacity: 0, x: -8000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
+      gsap.fromTo(gitIcon, {opacity: 0, x: -10000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
+      observerIcons.disconnect();
+    };
+  });
+};
+const observerIcons = new IntersectionObserver(showIcons, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1
+});
+observerIcons.observe(skillsTitle);
+
+// Contact animations
+const contactTitle = document.querySelector('[data-contact-title]');
+const skeleton = document.querySelector('[data-skeleton]');
+const label1 = document.querySelector('[data-label1]');
+const label2 = document.querySelector('[data-label2]');
+const label3 = document.querySelector('[data-label3]');
+const inputName = document.querySelector('[data-input-name]');
+const inputEmail = document.querySelector('[data-input-email]');
+const inputMsg = document.querySelector('[data-input-msg]');
+const submitBtn = document.querySelector('[data-submit]');
+
+const showContactInfo = (event) => {
+  event.forEach((event) => {
+    if (event.isIntersecting) {
+      gsap.fromTo(contactTitle, {opacity: 0, x: 10000}, {opacity: 1, x: 0});
+      gsap.fromTo(skeleton, {opacity: 0}, {opacity: 1, delay: 2});
+      gsap.fromTo(label1, {opacity: 0, x: -100000}, {opacity: 1, x: 0, duration: 0.5});
+      gsap.fromTo(label2, {opacity: 0, x: -100000}, {opacity: 1, x: 0, duration: 0.8});
+      gsap.fromTo(label3, {opacity: 0, x: -100000}, {opacity: 1, x: 0, duration: 1});
+      gsap.fromTo(inputName, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1});
+      gsap.fromTo(inputEmail, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1.3});
+      gsap.fromTo(inputMsg, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1.6});
+      gsap.fromTo(submitBtn, {opacity: 0}, {opacity: 1, duration: 2});
+
+      bodyScroll.classList.add('body__scroll--active');
+      bodyScroll.classList.remove('body__scroll--inactive');
+      observerContact.disconnect();
+    };
+  });
+};
+const observerContact = new IntersectionObserver(showContactInfo, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 1.0
+});
+observerContact.observe(submitBtn);
+
+// Showing the navbar
+const contact = document.querySelector('[data-contact]');
+const navbar = document.querySelector('[data-navbar]');
+const showNavbar = (event) => {
+  event.forEach((event) => {
+    if (event.isIntersecting) {
+      navbar.style.opacity = 1;
+    };
+  });
+};
+
+const observerNavbar = new IntersectionObserver(showNavbar, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5
+});
+observerNavbar.observe(submitBtn);
+
+// Animation for Social Media Navbar
+const mediaContainer = document.querySelector('[data-mediaContainer]');
+const mediaGit = document.querySelector('[data-mediaGit]');
+const mediaLinkedin = document.querySelector('[data-mediaLinkedin]');
+const mediaMail = document.querySelector('[data-mediaMail]');
+const mediaInstagram = document.querySelector('[data-mediaInstagram]');
+const showSocialMediaNav = (event) => {
+  event.forEach((event) => {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+      if (event.isIntersecting) {
+        gsap.fromTo(mediaContainer, {opacity: 0, display: 'none'}, {opacity: 1, display: 'flex'});
+        gsap.fromTo(mediaGit, {opacity: 0, x: -200}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
+        gsap.fromTo(mediaLinkedin, {opacity: 0, x: -400}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
+        gsap.fromTo(mediaMail, {opacity: 0, x: -600}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
+        gsap.fromTo(mediaInstagram, {opacity: 0, x: -800}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
+        observerSocialMediaNav.disconnect();
+      };
+    };
+  });
+};
+const observerSocialMediaNav = new IntersectionObserver(showSocialMediaNav, {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+});
+observerSocialMediaNav.observe(submitBtn);
+
 // Auto scroll from proyect to contact
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
   const autoScrollProyectsTitle = () => {
@@ -203,124 +333,3 @@ const autoScrollSkeleto = () => {
   }, 58000);
 };
 autoScrollSkeleto();
-
-// Showing the navbar
-const contact = document.querySelector('[data-contact]');
-const navbar = document.querySelector('[data-navbar]');
-const showNavbar = (event) => {
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      navbar.style.opacity = 1;
-    };
-  });
-};
-
-const observerNavbar = new IntersectionObserver(showNavbar, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.5
-});
-observerNavbar.observe(contact);
-
-// Abot Me Animation
-const aboutMe = document.querySelector('[data-aboutMe]');
-const showAboutMe = (event) => {
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      gsap.fromTo(aboutMe, {opacity: 0, x: 900000}, {opacity: 1, x: 0, ease: 'circ'});
-      observerAboutMe.disconnect()
-    };
-  });
-};
-const observerAboutMe = new IntersectionObserver(showAboutMe, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.5
-});
-observerAboutMe.observe(aboutMe);
-
-// Skills Animation
-const skillsTitle = document.querySelector('[data-skillsTitle]');
-const htmlIcon = document.querySelector('[data-html]');
-const cssIcon = document.querySelector('[data-css]');
-const jsIcon = document.querySelector('[data-js]');
-const reactIcon = document.querySelector('[data-react]');
-const gitIcon = document.querySelector('[data-git]');
-const showIcons = (event) => {
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      gsap.fromTo(skillsTitle, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'circ', duration: 1});
-      gsap.fromTo(htmlIcon, {opacity: 0, x: -2000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
-      gsap.fromTo(cssIcon, {opacity: 0, x: -4000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
-      gsap.fromTo(jsIcon, {opacity: 0, x: -6000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
-      gsap.fromTo(reactIcon, {opacity: 0, x: -8000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
-      gsap.fromTo(gitIcon, {opacity: 0, x: -10000}, {opacity: 1, x: 0, ease: 'back.out(0.7)', duration: 1.2});
-      observerIcons.disconnect();
-    };
-  });
-};
-const observerIcons = new IntersectionObserver(showIcons, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 1
-});
-observerIcons.observe(skillsTitle);
-
-// Contact animations
-const contactTitle = document.querySelector('[data-contact-title]');
-const skeleton = document.querySelector('[data-skeleton]');
-const label1 = document.querySelector('[data-label1]');
-const label2 = document.querySelector('[data-label2]');
-const label3 = document.querySelector('[data-label3]');
-const inputName = document.querySelector('[data-input-name]');
-const inputEmail = document.querySelector('[data-input-email]');
-const inputMsg = document.querySelector('[data-input-msg]');
-const submitBtn = document.querySelector('[data-submit]');
-
-const showContactInfo = (event) => {
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      gsap.fromTo(contactTitle, {opacity: 0, x: 10000}, {opacity: 1, x: 0});
-      gsap.fromTo(skeleton, {opacity: 0}, {opacity: 1, delay: 2});
-      gsap.fromTo(label1, {opacity: 0, x: -100000}, {opacity: 1, x: 0, duration: 0.5});
-      gsap.fromTo(label2, {opacity: 0, x: -100000}, {opacity: 1, x: 0, duration: 0.8});
-      gsap.fromTo(label3, {opacity: 0, x: -100000}, {opacity: 1, x: 0, duration: 1});
-      gsap.fromTo(inputName, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1});
-      gsap.fromTo(inputEmail, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1.3});
-      gsap.fromTo(inputMsg, {opacity: 0, x: 100000}, {opacity: 1, x: 0, duration: 1.6});
-      gsap.fromTo(submitBtn, {opacity: 0}, {opacity: 1, duration: 2});
-      observerContact.disconnect();
-    };
-  });
-};
-const observerContact = new IntersectionObserver(showContactInfo, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 1.0
-});
-observerContact.observe(submitBtn);
-
-// Animation for Social Media Navbar
-const mediaContainer = document.querySelector('[data-mediaContainer]');
-const mediaGit = document.querySelector('[data-mediaGit]');
-const mediaLinkedin = document.querySelector('[data-mediaLinkedin]');
-const mediaMail = document.querySelector('[data-mediaMail]');
-const mediaInstagram = document.querySelector('[data-mediaInstagram]');
-const showSocialMediaNav = (event) => {
-  event.forEach((event) => {
-    if (event.isIntersecting) {
-      gsap.fromTo(mediaContainer, {opacity: 0, display: 'none'}, {opacity: 1, display: 'flex'});
-      gsap.fromTo(mediaGit, {opacity: 0, x: -200}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
-      gsap.fromTo(mediaLinkedin, {opacity: 0, x: -400}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
-      gsap.fromTo(mediaMail, {opacity: 0, x: -600}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
-      gsap.fromTo(mediaInstagram, {opacity: 0, x: -800}, {opacity: 1, x: 0, duration: 1.2, ease: 'back.out(0.7)'});
-      observerSocialMediaNav.disconnect();
-    };
-  });
-};
-const observerSocialMediaNav = new IntersectionObserver(showSocialMediaNav, {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
-});
-observerSocialMediaNav.observe(submitBtn);

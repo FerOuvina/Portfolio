@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="./css/mediaquery-portfolio.css">
 </head>
 
-<body id="body" class="body">
+<body id="body" class="body__scroll--inactive">
 
   <!-- Navbar -->
   <header class="nav__main" data-navbar>
@@ -91,9 +91,9 @@
           </div>
         </div>
         <div class="proyects__container--videos">
-          <img class="proyects__container--videos--video" id="proyect1-video" data-video1
+          <img class="proyects__container--videos--video" id="proyect1-video" alt="proyect-video" data-video1
             src="./resources/TODOTaskManagerGif1.gif"></img>
-          <img class="proyects__container--videos--video" id="proyect1-video" data-video2
+          <img class="proyects__container--videos--video" id="proyect1-video" alt="proyect-video" data-video2
             src="./resources/TODOTaskManagerGif2.gif"></img>
         </div>
       </div>
@@ -101,9 +101,9 @@
       <!-- Proyect 2 -->
       <div class="proyects__container--2" data-proyect2>
         <div class="proyects__container--videos left">
-          <img class="proyects__container--videos--video left__video" data-video3
+          <img class="proyects__container--videos--video left__video" alt="proyect-video" data-video3
             src="./resources/EncryptorGif1.gif"></img>
-          <img class="proyects__container--videos--video left__video" data-video4
+          <img class="proyects__container--videos--video left__video" alt="proyect-video" data-video4
             src="./resources/EncryptorGif2.gif"></img>
         </div>
         <div class="proyects__container--card">
@@ -144,8 +144,8 @@
           </div>
         </div>
         <div class="proyects__container--videos">
-          <img class="proyects__container--videos--video" data-video5 src="./resources/HangmanGif1.gif"></img>
-          <img class="proyects__container--videos--video" data-video6 src="./resources/HangmanGif2.gif"></img>
+          <img class="proyects__container--videos--video" alt="proyect-video"  data-video5 src="./resources/HangmanGif1.gif"></img>
+          <img class="proyects__container--videos--video" alt="proyect-video" data-video6 src="./resources/HangmanGif2.gif"></img>
         </div>
       </div>
     </section>
@@ -195,6 +195,7 @@
               viewBox="0 0 362.73401 511.99998" id="svg3476" version="1.1" inkscape:version="0.91 r13725"
               sodipodi:docname="CSS3.svg">
               <defs id="defs3478" />
+              <title>CSS3 Logo</title>
               <sodipodi:namedview id="base" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0"
                 inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:zoom="0.35" inkscape:cx="181.367"
                 inkscape:cy="256" inkscape:document-units="px" inkscape:current-layer="layer1" showgrid="false"
@@ -244,6 +245,7 @@
             <svg class="skills__subContainer--js" data-js xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630"
               width="100px" height="100px">
               <rect width="630" height="630" fill="#f7df1e" />
+              <title>JavaScript Logo</title>
               <path
                 d="m423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-78.2 86.7-78.2 37.64 0 64.7 13.1 84.2 47.4l-46.1 29.6c-10.15-18.2-21.1-25.37-38.1-25.37-17.34 0-28.33 11-28.33 25.37 0 17.76 11 24.95 36.4 35.95l14.8 6.34c50.3 21.57 78.7 43.56 78.7 93 0 53.3-41.87 82.5-98.1 82.5-54.98 0-90.5-26.2-107.88-60.54zm-209.13 5.13c9.3 16.5 17.76 30.45 38.1 30.45 19.45 0 31.72-7.61 31.72-37.2v-201.3h59.2v202.1c0 61.3-35.94 89.2-88.4 89.2-47.4 0-74.85-24.53-88.81-54.075z" />
             </svg>
@@ -265,6 +267,7 @@
           <div>
             <svg class="skills__subContainer--git" data-git xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 272.96 114.01" width="100px" height="100px">
+              <title>Git Logo</title>
               <path fill="#413000"
                 d="m163.59,38.806c-5.985,0-10.442,2.9389-10.442,10.012,0,5.3291,2.9375,9.0284,10.12,9.0284,6.0875,0,10.222-3.5869,10.222-9.2485,0-6.416-3.7-9.7915-9.9-9.7915zm-11.97,49.94c-1.4162,1.7382-2.8275,3.585-2.8275,5.7646,0,4.3482,5.545,5.6568,13.162,5.6568,6.31,0,14.905-0.44188,14.905-6.3085,0-3.4869-4.135-3.7028-9.36-4.0304l-15.88-1.0825zm32.201-49.611c1.955,2.5029,4.025,5.9848,4.025,10.989,0,12.075-9.465,19.146-23.169,19.146-3.485,0-6.64-0.43412-8.5962-0.97712l-3.5912,5.7648,10.66,0.65125c18.822,1.1992,29.915,1.7442,29.915,16.208,0,12.514-10.985,19.581-29.915,19.581-19.69,0-27.196-5.0049-27.196-13.598,0-4.8975,2.1762-7.5025,5.9838-11.098-3.5912-1.518-4.7862-4.2362-4.7862-7.1748,0-2.395,1.195-4.5702,3.1562-6.6386,1.9575-2.065,4.1325-4.1348,6.7438-6.5274-5.33-2.6104-9.3562-8.2676-9.3562-16.319,0-12.509,8.2688-21.1,24.91-21.1,4.6788,0,7.5088,0.43062,10.011,1.0874h21.215v9.2446l-10.01,0.76175" />
               <path fill="#413000"
